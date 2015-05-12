@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>PREFEITURA</title>
-  <link rel="stylesheet" href="/_css/global.css">
+  <link rel="stylesheet" href="/views/_css/global.css">
 </head>
 <body id="sys_background">
 	   <h5 align = "right"><b><u><a href="">FAQ - Perguntas frequentes</a></b></u></h5>
