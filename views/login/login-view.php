@@ -20,7 +20,7 @@
                  <td id="Panel_I24" style="text-align:left; vertical-align:top; width:100%;" ><div id="I35" style="display:block;clear: both;text-align:left;" class="HTML_Default">                
                    <div id="I35_html"><html>
                       <h3> Login <br></h3>
-                      <form action="login-controller.php" method="POST"> <!-- colocar por GET -->
+                      <form action="/controllers/login/login-controller.php" method="POST"> <!-- colocar por GET -->
                             Usuario <br /> <input type="text" name="user" /> <br />
                             Senha  <br /> <input type="password" name="senha" />
                             <input type="submit" id="acao" name="acao" value="logar">
