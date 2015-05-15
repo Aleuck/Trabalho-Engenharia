@@ -1,9 +1,15 @@
-<?php
-switch($_REQUEST['acao']) {
-    case 'logar': {
-        print "<h1>Alguem tentando logar</h1>";
-        print "<p><strong>Usuario:</strong> {$_REQUEST['user']}</p>";
-        print "<p><strong>Senha:</strong> {$_REQUEST['senha']}</p>";
-    } break;
+<?php //>
+class LoginController extends MainController {
+	public function index() {
+		// Título da página
+		$this->title = 'Login';
+		// Parametros da função
+		$parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
+
+		include ABSPATH . '/views/_includes/header.php';
+
+		include ABSPATH . '/views/login/login-view.php';
+
+		include ABSPATH . '/views/_includes/footer.php';
+	}
 }
-?>

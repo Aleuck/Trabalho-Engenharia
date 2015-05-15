@@ -64,22 +64,43 @@ a:hover {
 }
 
 body {
-   margin-top: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
-#container {
-   /*width: 90%;
-   margin: 10px auto;
-   max-width:1024px;
-  */
-
-width: 900px;
-  ;
-   margin: 0px auto;
+#container,
+#page-wrapper {
+  width: 900px;
+  margin: 0px auto;
 }
 
 #header {
    width:900px;
+}
+
+#login {
+  background: #99aaff;
+  border: 1px solid #777;
+  border-radius: 5px;
+  padding: 0px;
+  margin: 30px auto;
+  width: 300px;
+}
+#login dt {
+  margin: 0;
+}
+#login dd {
+  margin: 0;
+}
+#login button {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+}
+
+#login h1 {
+  font-size: 22px;
+  margin: 0;
 }
 
 #header h1 {
