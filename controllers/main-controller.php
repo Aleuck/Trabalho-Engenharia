@@ -14,7 +14,7 @@ class MainController {
 	}
 	protected function includeJSHTML() {
 		foreach ($this->jsPaths as $path) {
-			echo "	<script src=\"".HOME_URI."$path\"></script>\n";
+			echo "  <script src=\"".HOME_URI."$path\"></script>\n";
 		}
 	}
 }

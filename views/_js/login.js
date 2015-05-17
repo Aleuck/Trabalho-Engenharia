@@ -25,9 +25,9 @@ var PREF = PREF || {};
         login(user, pass, onLoginAttemptResponse);
     }
     $(document).ready(function () {
-        $loginForm = $('#login-form');
-        $userField = $('#login-campo-usuario');
-        $passField = $('#login-campo-senha');
+        $loginForm = $('#form-login');
+        $userField = $('#matricula');
+        $passField = $('#senha');
         $loginForm.on('submit', onLoginFormSubmit);
     })
 }(PREF));
