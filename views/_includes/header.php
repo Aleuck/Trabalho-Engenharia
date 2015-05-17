@@ -13,6 +13,6 @@
 		<div id="header">
 			<h1>PORTAL PREFEITURA</h1>
 			<menu>
-				<li><a href>FAQ</a></li>
-			</menu>
+				<!-- <li><a href>FAQ</a></li>
+			</menu> -->
 		</div>
