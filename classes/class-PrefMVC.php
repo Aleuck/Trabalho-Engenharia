@@ -53,21 +53,6 @@ class PrefMVC {
 		$this->get_url_data();
 
 		/**
-		 * Verifica se o usuário está com sessao ativa.
-		 * Caso não esteja, adiciona o controlador de login.
-		 */
-		if (!$usuario) {
-			require_once ABSPATH . '/controllers/login-controller.php';
-			// Cria o objeto do controlador "home-controller.php"
-			// Este controlador deverá ter uma classe chamada HomeControlle
-			$this->controlador = new LoginController();
-			// Executa o método index()
-			$this->controlador->index();
-			// FIM
-			return;
-		}
-
-		/**
 		 * Verifica se o controlador existe. Caso contrário, adiciona o
 		 * controlador padrão (controllers/home-controller.php) e chama o método index().
 		 */
@@ -147,16 +132,16 @@ class PrefMVC {
 				$path = filter_var($path, FILTER_SANITIZE_URL);
 			$path = explode('/', $path);
 			// Configura as propriedades
-			$this->controlador  = chk_array($path, 0);
+			$this->controlador  = array_shift($path);
 			$this->controlador .= '-controller';
-			$this->acao         = chk_array($path, 1);
+			$this->acao         = array_shift($path);
 			// Configura os parâmetros
-			if (chk_array($path, 2)) {
-				unset($path[0]);
-				unset($path[1]);
+			// if ($path) {
+				//unset($path[0]);
+				//unset($path[1]);
 				// Os parâmetros sempre virão após a ação
-				$this->parametros = array_values($path);
-			}
+				$this->parametros = $path;
+			// }
 		}
 	}
 }
