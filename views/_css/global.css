@@ -1,5 +1,8 @@
 body {
    font-family: "Lucida Grande","Arial Unicode MS", sans-serif;
+   height: 100%;
+   margin: 0;
+   padding: 0;
    font-size: 12px;
    color: #333333;
    background: url("./../_images/background.png");
@@ -10,6 +13,8 @@ body {
    background-position:;
    background-attachment:;
 }
+
+html{ height: 100%;}
 
 td, tr {
    font-family: "Lucida Grande","Arial Unicode MS", sans-serif;
@@ -459,4 +464,23 @@ div.sys_navigation ul li a:hover, div#menu ul li a:hover, #navigation li a:hover
 .sys_layout .sys_button.solid a:hover {
    text-decoration: none;
    opacity: .8;
+}
+
+
+.container-fluid{
+  height:100%;
+  display:table;
+  width: 100%;
+  padding: 0;
+}
+
+.row-fluid {height: 100%; display:table-cell; vertical-align: middle;}
+
+.centering {
+  float:none;
+  margin:0 auto;
+}
+
+.input-box{
+  width: 360px;
 }
