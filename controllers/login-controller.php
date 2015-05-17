@@ -20,8 +20,11 @@ class LoginController extends MainController {
 			$usuario = (string) $_POST['usuario'];
 			$objUsuario = new Usuario($usuario);
 			$valido = ($objUsuario->verificarSenha((string) $_POST['senha']));
-
 			$idUsuario = $valido ? $objUsuario->getId() : 0;
+
+			if ($valido) {
+				$_SESSION['usuario.id'] = $objUsuario->getId();
+			}
 		}
 		if ('json' === chk_array($this->parametros, 0)) {
 			echo json_encode(array(

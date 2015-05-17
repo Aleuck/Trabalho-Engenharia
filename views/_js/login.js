@@ -15,6 +15,9 @@ var PREF = PREF || {};
     }
     function onLoginAttemptResponse(response) {
         console.log(response);
+        if (response.senhaValida) {
+            window.location.href = HOME_URI;
+        }
         $userField.removeAttr('disabled');
         $passField.removeAttr('disabled');
     }
