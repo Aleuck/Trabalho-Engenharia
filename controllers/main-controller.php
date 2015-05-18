@@ -3,6 +3,8 @@ class MainController {
 	protected $title;
 	protected $parametros;
 	protected $usuario;
+	public $nivel = NIVEL_USUARIO;
+	public $necessitaAutenticacao = true;
 	private $jsPaths = array();
 	public function __construct($parametros = array()) {
 		global $usuario;

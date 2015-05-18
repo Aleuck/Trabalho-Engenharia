@@ -94,6 +94,13 @@ class PrefMVC {
 		// Cria o objeto da classe do controlador e envia os parâmetros
 		$this->controlador = new $this->controlador($this->parametros);
 
+		if ($this->controlador->necessitaAutenticacao) {
+			if (!$usuario || !$usuario->nivel($this->controlador->nivel)) {
+				// Usuario sem permissao para acessar o controlador.
+				header('Location: ' . HOME_URI . '/permissaonegada/');
+			}
+		}
+
 		// Se o método indicado existir, executa o método e envia os parâmetros
 		if (method_exists($this->controlador, $this->acao)) {
 			$this->controlador->{$this->acao}($this->parametros);

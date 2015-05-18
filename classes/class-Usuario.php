@@ -38,7 +38,7 @@ class Usuario {
 	}
 	public function setUsuario($usuario) {
 		$usuario = trim($usuario);
-		if (!preg_match('/^[a-zA-Z0-9_]+$/', $usuario)) {
+		if (!preg_match('/^[a-zA-Z0-9_-]+$/', $usuario)) {
 			throw new Exception('Usuario invalido.');
 		}
 		$this->usuario = $usuario;
@@ -141,5 +141,11 @@ class Usuario {
 		} else {
 			return $this->salvarNovo();
 		}
+	}
+	public function nivel($nivel) {
+		return ($this->nivel <= $nivel);
+	}
+	public function prioridade($prioridade) {
+		return ($this->prioridade <= $prioridade);
 	}
 }

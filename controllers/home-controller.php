@@ -1,5 +1,6 @@
 <?php //>
 class HomeController extends MainController {
+	public $necessitaAutenticacao = false;
 	public function index() {
 		if (!$this->usuario) {
 			require_once ABSPATH . '/controllers/login-controller.php';
@@ -11,8 +12,7 @@ class HomeController extends MainController {
 			// FIM
 			return;
 		} else {
-			include ABSPATH . '/views/_includes/header.php';
-			include ABSPATH . '/views/_includes/footer.php';
+			header('Location: ' . HOME_URI . '/cadastro/' );
 		}
 	}
 }

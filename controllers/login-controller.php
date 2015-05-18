@@ -1,5 +1,7 @@
 <?php //>
 class LoginController extends MainController {
+	private $failed_login = false;
+	public $necessitaAutenticacao = false;
 	public function index() {
 		// Título da página
 		$this->title = 'Login';
@@ -16,10 +18,14 @@ class LoginController extends MainController {
 		include ABSPATH . '/views/_includes/footer.php';
 	}
 	public function validaUsuario() {
-		if (isset($_POST) && isset($_POST['usuario']) && isset($_POST['senha'])) {
-			$usuario = (string) $_POST['usuario'];
+		$valido = false;
+		$idUsuario = 0;
+		$usuario = '';
+		if (isset($_POST) && isset($_POST['matricula']) && isset($_POST['senha'])) {
+			$usuario = (string) $_POST['matricula'];
 			$objUsuario = new Usuario($usuario);
 			$valido = ($objUsuario->verificarSenha((string) $_POST['senha']));
+			$this->failed_login = !$valido;
 			$idUsuario = $valido ? $objUsuario->getId() : 0;
 
 			if ($valido) {
@@ -33,9 +39,27 @@ class LoginController extends MainController {
 				'senhaValida' => $valido));
 			// response as json
 		} else {
-			include ABSPATH . '/views/_includes/header.php';
-			include ABSPATH . '/views/login/login-view.php';
-			include ABSPATH . '/views/_includes/footer.php';
+			if ($this->failed_login) {
+				// autenticação falhou, mostrar tela de login
+				include ABSPATH . '/views/_includes/header.php';
+				include ABSPATH . '/views/login/login-view.php';
+				include ABSPATH . '/views/_includes/footer.php';
+			} else {
+				// redireciona para home
+				header('Location: ' . HOME_URI . '/');
+			}
 		}
+	}
+	public function sair() {
+		// Unset all of the session variables.
+		$_SESSION = array();
+		// If it's desired to kill the session, also delete the session cookie.
+		// Note: This will destroy the session, and not just the session data!
+		if (isset($_COOKIE[session_name()])) {
+		    setcookie(session_name(), '', time()-42000, '/');
+		}
+		// Finally, destroy the session.
+		session_destroy();
+		header('Location: ' . HOME_URI . '/' );
 	}
 }

@@ -8,7 +8,7 @@ var PREF = PREF || {};
         $.ajax({
             type: 'POST',
             url: HOME_URI + '/login/validaUsuario/json',
-            data: { 'usuario': usuario, 'senha': senha },
+            data: { 'matricula': usuario, 'senha': senha },
             success: callback,
             dataType: 'json'
         });
@@ -17,9 +17,12 @@ var PREF = PREF || {};
         console.log(response);
         if (response.senhaValida) {
             window.location.href = HOME_URI;
+        } else {
+            $userField.removeAttr('disabled');
+            $passField.removeAttr('disabled');
+            $passField.val('');
+            $passField.focus();
         }
-        $userField.removeAttr('disabled');
-        $passField.removeAttr('disabled');
     }
     function onLoginFormSubmit(event) {
         event.preventDefault();
