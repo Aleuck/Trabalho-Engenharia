@@ -6,7 +6,7 @@ $database = new mysqli(DB_HOST, DB_USERMAME, DB_PASSWORD, DB_NAME);
 
 require_once ABSPATH . '/functions/global-functions.php';
 require_once ABSPATH . '/classes/class-Usuario.php';
-$usuario_ativo = usuario_sessao();
+$usuario = usuario_sessao();
 
 require_once ABSPATH . '/controllers/main-controller.php';
 require_once ABSPATH . '/classes/class-PrefMVC.php';

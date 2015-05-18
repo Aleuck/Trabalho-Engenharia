@@ -10,6 +10,9 @@ class HomeController extends MainController {
 			$loginController->index();
 			// FIM
 			return;
+		} else {
+			include ABSPATH . '/views/_includes/header.php';
+			include ABSPATH . '/views/_includes/footer.php';
 		}
 	}
 }
