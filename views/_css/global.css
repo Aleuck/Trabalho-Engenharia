@@ -8,8 +8,7 @@ body {
    background: url("./../_images/wallhaven-101345.jpg");
    background-size: 1920px 1080px;
    background-color:#FFFFFF;
-<<<<<<< HEAD
-=======
+
    background-repeat:no-repeat;
    display: compact;
    background-position:;
@@ -22,7 +21,6 @@ td, tr {
    font-family: "Lucida Grande","Arial Unicode MS", sans-serif;
    font-size: 12px;
    color: #333333;
->>>>>>> 990329ee0ec876eb5f8840b4b9ab72680b8097f8
 }
 
 h1 {
@@ -492,4 +490,13 @@ div.sys_navigation ul li a:hover, div#menu ul li a:hover, #navigation li a:hover
 
 .input-box{
   width: 360px;
+}
+
+.navbar-nome{
+  text-decoration: bold;
+  color: #FFFFFF;
+  margin-top: 17px;
+  margin-right: 2px;
+
+
 }
