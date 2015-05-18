@@ -47,36 +47,25 @@
             <div class="centering text-center">
               <div class="container">
                 <form class="form form-horizontal" role="form">
+
+
+                  <!-- erros-->
+                  <div class="form-group has-error">
+                    <div class="col-md-4"></div>
+                   <div class="col-xm-12 col-sm-12 col-md-4" style="text-align:left;">
+                     <span class="label label-danger">Erro 1</span><br/>
+                     <span class="label label-danger">Erro 2</span><br/>
+                     <span class="label label-danger">Erro 3</span><br/>
+                   </div>
+                   <div class="col-md-4"></div>
+                 </div>
+
            <div class="form-group">
              <div class="col-md-4"></div>
              <div class="col-xm-12 col-sm-12 col-md-4" style="text-align:left;">
                <h1>Novo usuário</h1>
-
-               <!-- erros-->
-               <div class="form-group has-error">
-                 <div class="col-md-4"></div>
-                <div class="col-xm-12 col-sm-12 col-md-4" style="text-align:left;">
-                  <span class="label label-danger">Erro 1</span><br/>
-                  <span class="label label-danger">Erro 2</span><br/>
-                  <span class="label label-danger">Erro 3</span><br/>
-                </div>
-                <div class="col-md-4"></div>
-              </div>
-
-
               <label>Matrícula</label>
               <input class="form-control" id="matricula" placeholder="matricula" type="text">
-             </div>
-             <div class="col-md-4"></div>
-           </div>
-
-           <!-- incluir a classe has-error na div abaixo em caso de erro -->
-            <div class="form-group  has-feedback">
-              <div class="col-md-4"></div>
-             <div class="col-xm-12 col-sm-12 col-md-4" style="text-align:left;">
-              <label>Senha</label>
-              <input class="form-control" id="senha" placeholder="senha" type="password">
-
               <!-- só incluir em caso de erro -->
               <!-- <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
               <span id="inputError2Status" class="sr-only">(error)</span> -->
@@ -85,29 +74,55 @@
              <div class="col-md-4"></div>
            </div>
 
-           <div class="form-group">
+           <!-- incluir a classe  has-error em caso de erro -->
+            <div class="form-group  has-feedback">
+              <div class="col-md-4"></div>
+             <div class="col-xm-12 col-sm-12 col-md-4" style="text-align:left;">
+              <label>Senha</label>
+              <input class="form-control" id="senha" placeholder="senha" type="password">
+              <!-- só incluir em caso de erro -->
+              <!-- <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+              <span id="inputError2Status" class="sr-only">(error)</span> -->
+              <!-- -->
+             </div>
+             <div class="col-md-4"></div>
+           </div>
+
+           <div class="form-group has-feedback">
              <div class="col-md-4"></div>
             <div class="col-xm-12 col-sm-12 col-md-4" style="text-align:left;">
              <label>Repetir senha</label>
              <input class="form-control" id="senha-again" placeholder="senha" type="password">
+             <!-- só incluir em caso de erro -->
+             <!-- <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+             <span id="inputError2Status" class="sr-only">(error)</span> -->
+             <!-- -->
             </div>
             <div class="col-md-4"></div>
           </div>
 
-          <div class="form-group">
+          <div class="form-group has-feedback">
             <div class="col-md-4"></div>
            <div class="col-xm-12 col-sm-12 col-md-4" style="text-align:left;">
             <label>Nome</label>
             <input class="form-control" id="nome" placeholder="nome" type="text">
+            <!-- só incluir em caso de erro -->
+            <!-- <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+            <span id="inputError2Status" class="sr-only">(error)</span> -->
+            <!-- -->
            </div>
            <div class="col-md-4"></div>
          </div>
 
-         <div class="form-group">
+         <div class="form-group has-feedback">
            <div class="col-md-4"></div>
           <div class="col-xm-12 col-sm-12 col-md-4" style="text-align:left;">
            <label class="control-label">Email</label>
            <input class="form-control" id="email" placeholder="email" type="email">
+           <!-- só incluir em caso de erro -->
+           <!-- <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+           <span id="inputError2Status" class="sr-only">(error)</span> -->
+           <!-- -->
           </div>
           <div class="col-md-4"></div>
         </div>
