@@ -49,7 +49,7 @@
               <div class="col-md-4"></div>
               <div class="col-xm-12 col-sm-12 col-md-4" style="text-align:left;">
                 <label>Nome</label>
-                <input name="nome" class="form-control" id="nome" required placeholder="nome" pattern="[A-Za-z ]+[A-Za-z ']*" type="text">
+                <input name="nome" class="form-control" id="nome" required placeholder="nome" pattern="[A-Za-zÀ-ü ][A-Za-zÀ-ü ']*" type="text">
                 <!-- só incluir em caso de erro -->
                 <!-- <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
                 <span id="inputError2Status" class="sr-only">(error)</span> -->
