@@ -5,6 +5,7 @@ class Usuario {
 	protected $usuario = '';
 	protected $senha = '';
 	protected $nome = '';
+	protected $email = '';
 	protected $nivel = 100;
 	protected $prioridade = 100;
 	function __construct($parametro = false) {
@@ -28,6 +29,9 @@ class Usuario {
 	}
 	public function getNome() {
 		return $this->nome;
+	}
+	public function getEmail() {
+		return $this->email;
 	}
 	public function getNivel() {
 		return $this->nivel;
@@ -57,6 +61,10 @@ class Usuario {
 			$this->nome = $nome;
 		}
 	}
+	public function setEmail($email) {
+		$email = trim($email);
+		$this->email = $email;
+	}
 	public function setNivel($nivel) {
 		$nivel = (int) $nivel;
 		$this->nivel = $nivel;
@@ -68,7 +76,7 @@ class Usuario {
 	// Carrega usuario pelo id
 	public function loadId($id) {
 		global $database;
-		$sql = 'SELECT id, usuario, senha, nome, nivel, prioridade FROM usuarios WHERE id=?';
+		$sql = 'SELECT id, usuario, senha, nome, email, nivel, prioridade FROM usuarios WHERE id=?';
 		$stmt = $database->prepare($sql);
 		$stmt->bind_param('i', $id);
 		$this->executeLoadStmt($stmt);
@@ -76,7 +84,7 @@ class Usuario {
 	// Carrega usuário pelo nome de usuario
 	public function loadUsuario($usuario) {
 		global $database;
-		$sql = 'SELECT id, usuario, senha, nome, nivel, prioridade FROM usuarios WHERE usuario=?';
+		$sql = 'SELECT id, usuario, senha, nome, email, nivel, prioridade FROM usuarios WHERE usuario=?';
 		$stmt = $database->prepare($sql);
 		$stmt->bind_param('s', $usuario);
 		$this->executeLoadStmt($stmt);
@@ -89,13 +97,14 @@ class Usuario {
 			$this->limpa();
 			return;
 		}
-		$stmt->bind_result($id, $usuario, $senha, $nome, $nivel, $prioridade);
+		$stmt->bind_result($id, $usuario, $senha, $nome, $email, $nivel, $prioridade);
 		$stmt->fetch();
 		$stmt->close();
 		$this->setId($id);
 		$this->setUsuario($usuario);
 		$this->senha = $senha;
 		$this->setNome($nome);
+		$this->setEmail($email);
 		$this->setNivel($nivel);
 		$this->setPrioridade($prioridade);
 	}
@@ -104,17 +113,19 @@ class Usuario {
 		$this->usuario = '';
 		$this->senha = '';
 		$this->nome = '';
+		$this->email = '';
 		$this->nivel = 100;
 		$this->prioridade = 100;
 	}
 	private function salvarNovo() {
 		global $database;
-		$sql = 'INSERT INTO usuarios (usuario, senha, nome, nivel, prioridade) VALUES (?,?,?,?,?)';
+		$sql = 'INSERT INTO usuarios (usuario, senha, nome, email, nivel, prioridade) VALUES (?,?,?,?,?,?)';
 		$stmt = $database->prepare($sql);
-		$stmt->bind_param('sssii',
+		$stmt->bind_param('ssssii',
 			$this->usuario,
 			$this->senha,
 			$this->nome,
+			$this->email,
 			$this->nivel,
 			$this->prioridade);
 		$stmt->execute();
@@ -123,12 +134,13 @@ class Usuario {
 	}
 	private function atualizarDB() {
 		global $database;
-		$sql = 'UPDATE usuarios SET usuario=?, senha=?, nome=?, nivel=?, prioridade=? WHERE id=?';
+		$sql = 'UPDATE usuarios SET usuario=?, senha=?, nome=?, email=?, nivel=?, prioridade=? WHERE id=?';
 		$stmt = $database->prepare($sql);
 		$stmt->bind_param('sssiii',
 			$this->usuario,
 			$this->senha,
 			$this->nome,
+			$this->email,
 			$this->nivel,
 			$this->prioridade,
 			$this->id);

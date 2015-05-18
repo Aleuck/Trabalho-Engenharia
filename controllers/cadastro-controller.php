@@ -5,7 +5,7 @@ class CadastroController extends MainController {
 	public $nivel = NIVEL_ADMINISTRADOR;
 	public function index() {
 		// Título da página
-		$this->title = 'Login';
+		$this->title = 'Cadastro';
 		// Parametros da função
 		//$parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
 
@@ -22,7 +22,7 @@ class CadastroController extends MainController {
 		$matricula = isset($_POST['matricula']) ? (string) $_POST['matricula'] : '';
 		$senha = isset($_POST['senha']) ? (string) $_POST['senha'] : '';
 		$nome = isset($_POST['nome']) ? (string) $_POST['nome'] : '';
-		$email = isset($_POST['email']) ? (int) $_POST['email'] : 0;
+		$email = isset($_POST['email']) ? (string) $_POST['email'] : 0;
 		$prioridade = isset($_POST['prioridade']) ? (string) $_POST['prioridade'] : '';
 		$nivel = isset($_POST['nivel']) ? (int) $_POST['nivel'] : 0;
 
@@ -30,7 +30,7 @@ class CadastroController extends MainController {
 		$usuario->setUsuario($matricula);
 		$usuario->setSenha($senha);
 		$usuario->setNome($nome);
-		//$usuario->setEmail($email);
+		$usuario->setEmail($email);
 		$usuario->setPrioridade($prioridade);
 		$usuario->setNivel($nivel);
 		$usuario->salvar();
