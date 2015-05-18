@@ -23,7 +23,7 @@
               <div class="col-md-4"></div>
               <div class="col-xm-12 col-sm-12 col-md-4" style="text-align:left;">
                 <label>Senha</label>
-                <input name="senha" class="form-control" id="senha" placeholder="senha" required type="password">
+                <input name="senha" class="form-control" id="senha" placeholder="senha" pattern=".{6,}" required type="password">
                 <!-- só incluir em caso de erro -->
                 <!-- <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
                 <span id="inputError2Status" class="sr-only">(error)</span> -->
@@ -49,7 +49,7 @@
               <div class="col-md-4"></div>
               <div class="col-xm-12 col-sm-12 col-md-4" style="text-align:left;">
                 <label>Nome</label>
-                <input name="nome" class="form-control" id="nome" required placeholder="nome" type="text">
+                <input name="nome" class="form-control" id="nome" required placeholder="nome" pattern="[A-Za-z ]+[A-Za-z ']*" type="text">
                 <!-- só incluir em caso de erro -->
                 <!-- <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
                 <span id="inputError2Status" class="sr-only">(error)</span> -->
@@ -78,7 +78,7 @@
                 <select name="prioridade" id="prioridade" class="form-control">
                   <option value="1">Prefeito</option>
                   <option value="2">Secretário</option>
-                  <option value="3">Funcionário</option>
+                  <option value="3" selected>Funcionário</option>
                 </select>
               </div>
               <div class="col-xm-6 col-sm-6 col-md-2" style="text-align:left;">
@@ -86,7 +86,7 @@
                 <select name="nivel" id="nivel" class="form-control">
                   <option value="1">Super administrador</option>
                   <option value="2">Gerência de recursos</option>
-                  <option value="3">Usuário</option>
+                  <option value="3" selected>Usuário</option>
                 </select>
               </div>
               <div class="col-md-4"></div>
