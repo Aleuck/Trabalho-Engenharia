@@ -35,7 +35,7 @@ var PREF = PREF || {};
         $priorityField.removeAttr('disabled');
         $levelField.removeAttr('disabled');
         $submitBt.removeAttr('disabled');
-        if (response.success) {
+        if (response.sucesso) {
             $registerForm[0].reset();
             alert('Cadastro efetuado com sucesso.');
         } else {
