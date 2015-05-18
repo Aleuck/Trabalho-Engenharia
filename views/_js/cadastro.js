@@ -30,7 +30,17 @@ var PREF = PREF || {};
         console.log(response);
         $userField.removeAttr('disabled');
         $passField.removeAttr('disabled');
+        $nameField.removeAttr('disabled');
+        $emailField.removeAttr('disabled');
+        $priorityField.removeAttr('disabled');
+        $levelField.removeAttr('disabled');
         $submitBt.removeAttr('disabled');
+        if (response.success) {
+            $registerForm[0].reset();
+            alert('Cadastro efetuado com sucesso.');
+        } else {
+            alert('Erro no cadastro.');
+        }
     }
     function onRegisterFormSubmit(event) {
         event.preventDefault();
