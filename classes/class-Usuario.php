@@ -6,8 +6,8 @@ class Usuario {
 	protected $senha = '';
 	protected $nome = '';
 	protected $email = '';
-	protected $nivel = 100;
-	protected $prioridade = 100;
+	protected $nivel = NIVEL_USUARIO;
+	protected $prioridade = PRIORIDADE_FUNCIONARIO;
 	function __construct($parametro = false) {
 		if (is_string($parametro)) {
 			$usuario = $parametro;

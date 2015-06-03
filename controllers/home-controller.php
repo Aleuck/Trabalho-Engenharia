@@ -12,7 +12,7 @@ class HomeController extends MainController {
 			// FIM
 			return;
 		} else {
-			header('Location: ' . HOME_URI . '/cadastro/' );
+			header('Location: ' . HOME_URI . '/usuario/' );
 		}
 	}
 }
